@@ -30,7 +30,9 @@ class Table {
         // create table statement
         let returnValue = `CREATE TABLE IF NOT EXISTS ${this.name} (\n`;
 
+        // concat the column and constraint array into one array
         const fused = [...this.columns, ...this.constraints];
+        // add each column definition and constraint to the output
         for (let i = 0; i < fused.length; i++) {
             returnValue += `\t${fused[i]}`;
 
